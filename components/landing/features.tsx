@@ -43,10 +43,10 @@ const features: Feature[] = [
 const FeatureCard = ({ feature }: { feature: Feature }) => {
   return (
     <Card
-      className={`${feature.bgColor} border-none shadow-lg hover:shadow-xl transition-shadow`}
+      className={`${feature.bgColor} border-none shadow-lg hover:shadow-xl transition-shadow max-w-[500px] p-5 sm:p-2`}
     >
-      <CardContent className="p-6 space-y-4">
-        <div className="w-12 h-12 relative mb-4">
+      <CardContent className="p-6 space-y-4 m-auto w-fit">
+        <div className="max-w-xl h-52 relative mb-4">
           <Image
             src={feature.icon}
             alt={feature.title}
@@ -55,8 +55,8 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
           />
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-          <p className="text-gray-700">{feature.description}</p>
+          <h3 className="text-xl sm:text-xl font-bold my-2">{feature.title}</h3>
+          <p >{feature.description}</p>
         </div>
       </CardContent>
     </Card>
@@ -78,12 +78,12 @@ const FeaturesSection = () => {
 
         {/* Content */}
         <div className="z-20 relative container mx-auto px-4">
-          <span className="text-white font-semibold text-lg block mb-2 bg-[#E15D25] w-fit py-3 px-3 rounded-lg my-5">
+          <span className="text-white font-semibold text-xl block mb-10 bg-[#E15D25] w-fit py-3 px-3 rounded-lg my-5">
             Features
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-bold mb-12">
-            Maximize your restaurant&apos;s  <br className="my-5"/>
-            <span className="text-[#E15D25]">revenue</span> with our streamlined <br className="mb-5"/>
+            Maximize your restaurant&apos;s  <br className="my-6"/>
+            <span className="text-[#E15D25]">revenue</span> with our streamlined <br className="mb-6"/>
             operations
           </h2>
 

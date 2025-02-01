@@ -21,7 +21,7 @@ const HomePage = () => {
 
       {/* Carousel Section */}
       <section className="section second-section h2 flex flex-col items-center justify-center pt-12 w-full my-12">
-        <h2 className="text-3xl md:text-4xl text-center font-medium mb-16 ">
+        <h2 className="text-[40px] md:text-4xl text-center font-medium mb-16 ">
           <span className="block md:inline">Food business is </span>
           <strong className="font-bold">as serious as fun!</strong>{" "}
           <p className="my-3">
@@ -32,8 +32,10 @@ const HomePage = () => {
 
         <FeatureCarousel />
       </section>
-      <FeaturesSection />
-      <GrowthSection />
+      <div className="px-10">
+        <FeaturesSection />
+        <GrowthSection />
+      </div>
       <ProductsSection />
       <TestimonialsSection />
       <PartnersSection />

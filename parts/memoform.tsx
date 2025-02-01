@@ -69,7 +69,7 @@ const MemoFormScreen = () => {
 
         <div>
           <label htmlFor="restaurantName" className="block ">
-            Restaurant Name
+            Food Business Address
           </label>
           <input
             id="restaurantName"
@@ -82,7 +82,7 @@ const MemoFormScreen = () => {
 
         <div>
           <label htmlFor="restaurantAddress" className="block ">
-            Restaurant Address
+            Food Business Address
           </label>
           <input
             id="restaurantAddress"
@@ -107,11 +107,17 @@ const MemoFormScreen = () => {
             className="mt-2 w-[2px] flex gap-10"
           >
             <div className="text-xs flex items-center gap-2 border border-slate-600 rounded-2xl py-3 px-5">
-              <RadioGroupItem  value="owner" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="owner"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Owner</span>
             </div>
             <div className="text-xs flex items-center gap-2  border-slate-600 rounded-2xl py-3 px-5">
-              <RadioGroupItem value="staff" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="staff"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Staff</span>
             </div>
           </RadioGroup>
@@ -120,7 +126,7 @@ const MemoFormScreen = () => {
         {/* Features */}
         <div className="mb-5">
           <Label htmlFor="features" className="block text-[14px] font-semibold">
-            What features do you want to use
+            What features would you want to use?
           </Label>
           <RadioGroup
             {...form.register("features")}
@@ -129,26 +135,42 @@ const MemoFormScreen = () => {
             className="mt-2 w-full grid grid-cols-3 gap-4"
           >
             <div className="text-xs flex items-center gap-2">
-              <RadioGroupItem value="POS" className="h-2 w-2"></RadioGroupItem>Point of sale
+              <RadioGroupItem value="POS" className="h-2 w-2"></RadioGroupItem>
+              Point of sale
             </div>
             <div className="text-xs flex items-center gap-2">
-              <RadioGroupItem value="Customized Site" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="Customized Site"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Customized Sites</span>
             </div>
             <div className="text-xs flex items-center gap-2">
-              <RadioGroupItem value="Mobile App" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="Mobile App"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Mobile App Integration</span>
             </div>
             <div className="text-xs flex items-center gap-2">
-              <RadioGroupItem value="Stock Manager" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="Stock Manager"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Stock Manager</span>
             </div>
             <div className="text-xs flex items-center gap-2">
-              <RadioGroupItem value="Integration" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="Integration"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Insights-Pro</span>
             </div>
             <div className="text-xs flex items-center gap-2">
-              <RadioGroupItem value="Operations-Control" className="h-2 w-2"></RadioGroupItem>
+              <RadioGroupItem
+                value="Operations-Control"
+                className="h-2 w-2"
+              ></RadioGroupItem>
               <span>Operations-Control</span>
             </div>
           </RadioGroup>

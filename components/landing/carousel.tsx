@@ -87,7 +87,7 @@ const FeatureCarousel = () => {
   };
 
   return (
-    <section className="relative w-full px-6 py-16 container">
+    <section className="relative w-full  py-16 container">
       <div className="relative overflow-hidden mx-auto bg-white rounded-md ">
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -108,8 +108,8 @@ const FeatureCarousel = () => {
                 />
               </div>
               <div className="text-center px-6 pb-8 max-w-xl text-black my-12 m-auto">
-                <h2 className="text-2xl font-semibold mb-4">{slide.title}</h2>
-                <p className="text-gray-600">{slide.description}</p>
+                <h2 className="text-[28px] font-semibold mb-4 ">{slide.title}</h2>
+                <p className="text-gray-600 text-[19px]">{slide.description}</p>
               </div>
             </div>
           ))}
