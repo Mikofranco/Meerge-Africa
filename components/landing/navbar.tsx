@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 px-6 py-4 transition-colors ${
-        !isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
       <div className="flex justify-between items-center">
@@ -64,7 +64,7 @@ const Navbar = () => {
               <Button
                 key={index}
                 variant="secondary"
-                className={`px-8 py-2 text-white ${ isScrolled ? "bg-[#FF4101] hover:bg-[#0E2254] transition-colors" :"bg-[#0E2254] hover:bg-[#FF4101] transition-colors"}`}
+                className={`px-8 py-2 text-white ${ !isScrolled ? "bg-[#FF4101] hover:bg-[#0E2254] transition-colors" :"bg-[#0E2254] hover:bg-[#FF4101] transition-colors"}`}
                 asChild
                 onClick={routeToMemoForm}
               >
@@ -75,7 +75,7 @@ const Navbar = () => {
                 key={index}
                 href={link.href}
                 className={`desktop-menu-link transition-colors ${
-                  isScrolled
+                  !isScrolled
                     ? "text-white font-semibold"
                     : "text-black font-semibold"
                 }`}
