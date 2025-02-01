@@ -15,7 +15,7 @@ const HeroSection = () => {
   };
   return (
     <section
-      className="relative bg-cover bg-no-repeat bg-center h-[95vh]"
+      className="relative bg-cover bg-no-repeat bg-center h-[100vh]"
       style={{
         backgroundImage: "url('/assets/bg-img.png')",
         backgroundPosition: "center top",
