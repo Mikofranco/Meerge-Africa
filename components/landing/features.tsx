@@ -67,7 +67,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="px-6 container mx-auto">
       <div
-        className="section mx-auto container rounded-lg py-16 relative bg-no-repeat bg-cover"
+        className="section mx-auto container rounded-lg py-16 relative bg-no-repeat bg-cover p-6"
         style={{
           backgroundImage: "url('/assets/chef-chopping-tomatoes.png')",
           backgroundPosition: "center top",
@@ -78,15 +78,16 @@ const FeaturesSection = () => {
 
         {/* Content */}
         <div className="z-20 relative container mx-auto px-4">
-          <span className="text-secondary font-semibold text-lg block mb-2">
+          <span className="text-white font-semibold text-lg block mb-2 bg-[#E15D25] w-fit py-3 px-3 rounded-lg my-5">
             Features
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-bold mb-12">
-            Maximize your restaurant&apos;s revenue with our streamlined
+            Maximize your restaurant&apos;s  <br className="my-5"/>
+            <span className="text-[#E15D25]">revenue</span> with our streamlined <br className="mb-5"/>
             operations
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <FeatureCard key={index} feature={feature} />
             ))}

@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { RequestDemoIcon } from "@/public/assets/svgs";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -14,7 +15,7 @@ const HeroSection = () => {
   };
   return (
     <section
-      className="relative bg-cover bg-no-repeat bg-center"
+      className="relative bg-cover bg-no-repeat bg-center h-[100vh]"
       style={{
         backgroundImage: "url('/assets/bg-img.png')",
         backgroundPosition: "center top",
@@ -40,21 +41,21 @@ const HeroSection = () => {
             for Restaurant owners around the continent.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 py-4 md:py-0 xl:py-8">
+          <div className="flex flex-col sm:flex-row gap-4 py-4 md:py-0 xl:py-8 mb-10">
             <Button
               asChild
               variant="default"
               className="px-8 py-2 bg-primary text-white hover:bg-primary/50 transition-colors"
             >
               <Link href="" onClick={routeToMemoForm}>
-              Request Demo
+              Request Demo <RequestDemoIcon/>
               </Link>
             </Button>
 
             <Button
               asChild
               variant="secondary"
-              className="px-8 py-2 text-white hover:bg-secondary/50 transition-colors"
+              className="px-8 py-2 text-white hover:bg-secondary/50 transition-colors bg-[#FF4101]"
             >
               <Link href="" onClick={routeToSignUp}>Start here</Link>
             </Button>

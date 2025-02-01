@@ -88,7 +88,7 @@ const FeatureCarousel = () => {
 
   return (
     <section className="relative w-full px-6 py-16 container">
-      <div className="relative overflow-hidden mx-auto bg-white rounded-md">
+      <div className="relative overflow-hidden mx-auto bg-white rounded-md ">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -107,7 +107,7 @@ const FeatureCarousel = () => {
                   priority={index === 0}
                 />
               </div>
-              <div className="text-center px-6 pb-8">
+              <div className="text-center px-6 pb-8 max-w-xl text-black my-12 m-auto">
                 <h2 className="text-2xl font-semibold mb-4">{slide.title}</h2>
                 <p className="text-gray-600">{slide.description}</p>
               </div>
@@ -116,7 +116,7 @@ const FeatureCarousel = () => {
         </div>
 
         {/* Dots navigation */}
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 mb-5">
           {slides.map((_, index) => (
             <button
               key={index}

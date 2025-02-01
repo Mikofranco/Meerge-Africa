@@ -27,9 +27,9 @@ export function RestaurantSignupForm() {
   const form = useZodForm({
     schema: RestaurantSignupFormSchema,
   });
-  const [isChecked, setIsChecked]= useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   // const [phoneSignUpMessage, setPhoneSignupMessage]= useState({})
-  const [emailSignupMessage, setEmailSignupMessage]= useState("")
+  const [emailSignupMessage, setEmailSignupMessage] = useState("");
   const {
     signupData,
     signupError,
@@ -37,13 +37,10 @@ export function RestaurantSignupForm() {
     signupPayload,
     signupIsSuccess,
   } = useSignup();
-  const {
-    verifyEmailError,
-    verifyEmailIsLoading,
-    verifyEmailPayload,
-  } = useVerifyEmail((res: any)=>{
-    setEmailSignupMessage(res)
-  });
+  const { verifyEmailError, verifyEmailIsLoading, verifyEmailPayload } =
+    useVerifyEmail((res: any) => {
+      setEmailSignupMessage(res);
+    });
   const router = useRouter();
 
   const handleSubmit = form.handleSubmit(async (data) => {
@@ -51,17 +48,17 @@ export function RestaurantSignupForm() {
       alert("Please accept the terms and conditions.");
       return;
     }
-    if(isChecked){
+    if (isChecked) {
       const extendedData = {
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,
-        phone_number: `+234${data.phoneNumber}`,
+        phone_number: `${data.phoneNumber}`,
         password: data.password,
         actor_type: "restaurantowner",
         is_mobile: false,
       };
-  
+      console.log("chek phone ", extendedData)
       signupPayload(extendedData);
     }
   });
@@ -73,11 +70,12 @@ export function RestaurantSignupForm() {
     const mailVerificationPayload = { email, token };
     verifyEmailPayload(mailVerificationPayload);
   };
-  
 
   useEffect(() => {
-    console.log(signupError)
-    if (signupError === messages.HANDLE_SUCCESS || signupError === "e is not a function") {
+    console.log("email response  ==>", emailSignupMessage);
+    console.log("email mail  ==>", form.getValues("email"));
+    console.log("email error  ==>", signupError);
+    if (signupError === messages.HANDLE_SUCCESS) {
       verifyMail();
       localStorage.clear();
       Storage.set("email", form.getValues("email"));
@@ -94,7 +92,8 @@ export function RestaurantSignupForm() {
       <form onSubmit={handleSubmit} className="space-y-4 group">
         {signupError ? (
           <div className="text-center text-red-500 font-semibold">
-            {signupError === "handleSuccess is not a function" || signupError === "e is not a function"
+            {signupError === "handleSuccess is not a function" ||
+            signupError === "e is not a function"
               ? ""
               : signupError}
           </div>
@@ -157,12 +156,13 @@ export function RestaurantSignupForm() {
                 Phone Number
               </FormLabel>
               <FormControl>
-                <PhoneInput placeholder="Enter Your Phone Number" {...field} />
+                <PhoneInput value={field.value} onChange={field.onChange} placeholder="Enter PhoneNumber"/>
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="password"
@@ -182,8 +182,7 @@ export function RestaurantSignupForm() {
           <Checkbox
             id="terms"
             className="data-[state=checked]:bg-primary"
-            onCheckedChange={handleChecks
-            }
+            onCheckedChange={handleChecks}
           />
           <FormLabel className="text-xs text-slate-700" htmlFor="terms">
             By clicking, you accept our Primary Services Agreement, User Terms

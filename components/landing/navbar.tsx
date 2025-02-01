@@ -35,11 +35,14 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const routeToMemoForm = () => {
+    window.open("/restaurant/memoForm", "_blank");
+  };
 
   return (
     <nav
-      className={`container relative z-50 mx-auto px-6 py-4 transition-colors ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 px-6 py-4 transition-colors ${
+        !isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
       <div className="flex justify-between items-center">
@@ -61,17 +64,20 @@ const Navbar = () => {
               <Button
                 key={index}
                 variant="secondary"
-                className="px-8 py-2 text-white hover:bg-secondary/50 transition-colors"
+                className={`px-8 py-2 text-white ${ isScrolled ? "bg-[#FF4101] hover:bg-[#0E2254] transition-colors" :"bg-[#0E2254] hover:bg-[#FF4101] transition-colors"}`}
                 asChild
+                onClick={routeToMemoForm}
               >
-                <Link href={link.href}>{link.text}</Link>
+                <Link href={""}>{link.text}</Link>
               </Button>
             ) : (
               <Link
                 key={index}
                 href={link.href}
                 className={`desktop-menu-link transition-colors ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                  isScrolled
+                    ? "text-white font-semibold"
+                    : "text-black font-semibold"
                 }`}
               >
                 {link.text}
@@ -96,8 +102,9 @@ const Navbar = () => {
                     variant="secondary"
                     className="w-full text-white hover:bg-secondary/50 transition-colors"
                     asChild
+                    onClick={routeToMemoForm}
                   >
-                    <Link href={link.href}>{link.text}</Link>
+                    {/* <Link href={link.href}>{link.text}</Link> */}
                   </Button>
                 ) : (
                   <Link
