@@ -88,7 +88,7 @@ const FeatureCarousel = () => {
 
   return (
     <section className="relative w-full px-6 py-16 container">
-      <div className="relative overflow-hidden mx-auto bg-white rounded-md">
+      <div className="relative overflow-hidden mx-auto bg-white rounded-md ">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}

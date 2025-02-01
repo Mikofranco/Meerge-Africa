@@ -61,7 +61,7 @@ const Navbar = () => {
               <Button
                 key={index}
                 variant="secondary"
-                className="px-8 py-2 text-white hover:bg-secondary/50 transition-colors"
+                className="px-8 py-2 text-white bg-[#0E2254] hover:bg-secondary/50 transition-colors {}"
                 asChild
               >
                 <Link href={link.href}>{link.text}</Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
                 key={index}
                 href={link.href}
                 className={`desktop-menu-link transition-colors ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                  isScrolled ? "text-white font-semibold" : "text-black font-semibold"
                 }`}
               >
                 {link.text}
